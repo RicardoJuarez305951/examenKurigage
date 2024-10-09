@@ -1,0 +1,94 @@
+
+    
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        background: linear-gradient(305deg, rgb(58, 86, 109) 0%, rgba(73, 147, 184, 1) 35%, rgb(184, 205, 220) 100%);
+        background-attachment: fixed; /* Esto asegura que el gradiente se fije mientras haces scroll */
+        background-size: cover;
+    }
+    
+    .responsiveText{
+        font-size: 1.22vw;
+    }
+    
+    .user-box{
+        position: absolute;
+        width: 90%;
+        height: auto;
+        top: 5%;
+        flex-grow: 5;
+    }
+    
+    .title{
+        border-bottom: 1px solid;
+        background-color: #d3dde3;
+        margin: -16px;
+        border-radius: 2% / 15%;
+        margin-bottom: 5px;
+    }
+    
+    .borderRound{
+        border-radius: 2% / 2%;
+    }
+    
+    .card{
+        background-color: #dfe3e5;
+    }
+    
+    .floatRigth{
+        float: right !important;   
+    }
+    
+    .card-header{
+        background-color: #78B0D3;
+    }
+    
+    
+    
+    @media (max-width: 767px) {
+        .bg-l{
+            background: #78b0d3;
+            background-image: none;
+        }    
+        
+        .user-box{
+            width: 90%;
+            height: 100%;
+            top: 5%;
+        }
+    
+        .smCard{
+            width: 100%;
+        }
+        
+    }
+    
+    @media (min-width: 768px) and (max-width: 1119px){
+        .bg-l{
+            background: #78B0D3;
+            background-image: none;
+        }    
+        
+        .user-box{
+            width: 90%;
+            height: 100%;
+            top: 5%;
+        }
+    
+        .title{
+            background-color: #d3dde3;
+            margin: -5px;
+            border-radius: 2% / 15%;
+            margin-bottom: 5px;
+        }
+    
+    }
+    
+    @media (min-width: 1200px){
+        
+    }

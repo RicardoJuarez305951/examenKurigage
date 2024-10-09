@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Productos{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ asset('css/productosStyle.css') }}">
+
+<div style="height: 100vh; width: 100%;" class="d-flex mx-auto align-items-stretch justify-content-center">
+    <div class="BG d-flex align-items-stretch">
+      <div class="bg-img w-100"></div>
+    </div>
+
+    <div class="borderRound user-box p-3  w-50 d-flex flex-column shadow-lg position-absolute bg-white">
+      
+
+      {# Card "Agregar Producto" #}
+      <div class="mt-3 d-flex flex-row ">
+        <div class="w-100 card shadow">
+          <div class="card-header  fs-4 fw-semibold mb -3">Editar el producto {{producto.nombre}}</div>
+          <div>
+            <form action="{{ path('func_producto_editar') }}" method="POST" class="container d-flex flex-row justify-content-around card-body">
+            <div class="d-flex flex-column">
+              <p class="align-self-center">Clave del Producto</p>
+              <div class="input-group flex-nowrap">
+                <input type="text" name="claveProducto" id="disabledTextInput" value="{{producto.claveProducto}}" class="form-control" aria-describedby="addon-wrapping" disabled>
+                <input type="hidden" name="claveProducto" value="{{ producto.claveProducto }}">
+              </div>
+            </div>
+
+            <div class="d-flex flex-column">
+              <p class="align-self-center">Nombre del Producto</p>
+              <div class="input-group flex-nowrap">
+                <input type="text" name="nombre" value="{{producto.nombre}}" class="form-control" aria-describedby="addon-wrapping">
+              </div>
+            </div>
+
+            <div class="d-flex flex-column">
+              <p class="align-self-center">Precio</p>
+              <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+                <input type="text" name="precio" value="{{producto.precio}}" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body"> 
+            <button type="submit" class="mt-2 mb-2 float-end btn btn-primary"><i class="bi bi-plus-circle-fill"></i> Agregar </button>
+          </div>
+          </form>
+        </div>
+      </div>
+      {# Boton Regresar #}
+      {% include "producto/layout/to_index.html.twig" %}
+    </div>
+  </div>
+
+  <script src="{{ asset('js/productos.js') }}"></script>
+
+
+{% endblock %}

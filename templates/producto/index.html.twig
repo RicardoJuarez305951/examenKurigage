@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Productos{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ asset('css/productosStyle.css') }}">
+
+<div style="height: 100vh; width: 100%;" class="d-flex mx-auto align-items-stretch justify-content-center">
+    <div class="BG d-flex align-items-stretch">
+      <div class="bg-img w-100"></div>
+    </div>
+
+    <div class="borderRound user-box p-3  w-50 d-flex flex-column shadow-lg position-absolute bg-white">
+      {# Card "Buscar Productos" #}
+      {% include 'producto/layout/buscar.html.twig' %}
+
+      {# Card "Agregar Producto" #}
+      {% include 'producto/layout/agregar_form.html.twig' %}
+
+      {# Tabla de Productos #}
+      <div class="mt-3 p-2 container shadow-lg card ">
+        <h5 class="mb-3">Productos</h5>
+      <button href="{{ path('func_producto_exportar') }}" class="btn p-1 mb-3 btn-sm btn-secondary confirm-export">Exportar</button>
+      {% include 'producto/layout/tabla.html.twig' %}
+      </div>
+      
+    </div>
+  </div>
+
+  <script src="{{ asset('js/productos.js') }}"></script>
+
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{# Card "Buscar Productos" #}
+<div class="w-100 card shadow">
+    <div class="card-header  fs-4 fw-semibold ">Buscar Producto</div>
+    <div class="card-body"> 
+      <div >
+        <form class="input-group flex-nowrap" action="{{ path('func_producto_buscar')}}" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre del Producto" class="form-control" aria-describedby="addon-wrapping">
+      </div>
+      <button type="submit" class="mt-2 mb-2 float-end btn btn-primary"><i class="bi bi-plus-circle-fill"></i> Buscar </button>
+    </form>
+    </div>
+  </div>
